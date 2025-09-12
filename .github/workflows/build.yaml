@@ -1,0 +1,29 @@
+name: Build FastDDS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fastdds:
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        platform: [ubuntu-24.04] #, ubuntu-22.04-arm] #, ubuntu-24.04-arm]
+
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+    - name: Set-up dependancies
+      run: |
+        codename=$(lsb_release -c -s)
+        echo "deb [trusted=yes] https://alest-software.github.io/ubuntu ${codename} main" | sudo tee /etc/apt/sources.list.d/alest-software.list
+        sudo apt update
+        sudo apt install -y cmake g++ python3-pip wget git
+        sudo apt install -y libasio-dev libtinyxml2-dev
+        sudo apt install -y libssl-dev
+        sudo apt install -y libp11-dev
+        sudo apt install -y softhsm2
+        sudo apt install -y libengine-pkcs11-openssl
+        sudo apt install -y libfoonathan-memory-dev
+        sudo apt install -y libfastcdr libfastdds libfastdds-python fastddsgen
