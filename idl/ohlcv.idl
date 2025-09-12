@@ -1,0 +1,55 @@
+#include "common.idl"
+
+module inclination {
+    module idl_ex {
+        typedef string key_t;
+        typedef double price_t;
+        typedef double volume_t;
+
+        struct exchange_t {
+            key_t id;
+            string name;
+        };
+
+        struct asset_t {
+            key_t id;
+            string name;
+        };
+
+        struct symbol_t {
+            key_t id;
+            asset_t base;
+            asset_t quote;
+            string name;
+        };
+
+        struct interval_t {
+            key_t id;
+            string name;
+        };
+
+        struct OhlcvData {
+            timestamp_t timestamp;
+            price_t open;
+            price_t high;
+            price_t low;
+            price_t close;
+            volume_t volume;
+        };
+
+        struct Ohlcv {
+            key_t symbol_id;
+            key_t interval_id;
+            timestamp_t etime;
+            OhlcvData data;
+        };
+
+        struct OhlcvSeries {
+            key_t symbol_id;
+            key_t interval_id;
+            timestamp_t etime;
+            sequence<OhlcvData> data;
+        };
+
+    };
+};

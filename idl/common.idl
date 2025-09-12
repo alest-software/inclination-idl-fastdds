@@ -1,0 +1,10 @@
+
+module inclination {
+    module idl_ex {
+        typedef double value_t;
+        typedef double timestamp_t;
+
+        struct Dummy {};
+    };
+};
+
