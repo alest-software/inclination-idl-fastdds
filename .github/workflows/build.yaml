@@ -28,7 +28,8 @@ jobs:
         sudo apt install -y libfoonathan-memory-dev
         sudo apt install -y libfastcdr libfastdds libfastdds-python fastddsgen
 
-    - name: Set-up dependancies
+    - name: Build
       run: |
+        ls -al
         make --file=./build.mk all
 
