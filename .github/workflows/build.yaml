@@ -14,6 +14,9 @@ jobs:
     runs-on: ${{ matrix.platform }}
 
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
     - name: Set-up dependancies
       run: |
         codename=$(lsb_release -c -s)
