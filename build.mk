@@ -12,7 +12,7 @@ build:
 	cmake -DCMAKE_MODULE_PATH=$(PWD)/cmake -DCMAKE_INSTALL_PREFIX=/opt/inclination ../source; \
 	cmake --build .
 
-PROJECT_PACKAGE_NAME = inclination-idl-ex
+PROJECT_PACKAGE_NAME = inclination-idl-fastdds
 fastddsgen_FULL_VERSION = 0.1.0
 GITHUB_RUN_NUMBER ?= 0
 ARCH = amd64
