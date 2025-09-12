@@ -27,3 +27,8 @@ jobs:
         sudo apt install -y libengine-pkcs11-openssl
         sudo apt install -y libfoonathan-memory-dev
         sudo apt install -y libfastcdr libfastdds libfastdds-python fastddsgen
+
+    - name: Set-up dependancies
+      run: |
+        make -f build.mk
+
