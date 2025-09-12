@@ -34,6 +34,5 @@ jobs:
 
     - name: Build
       run: |
-        ls -al
         make --file=./build.mk all
 
