@@ -13,10 +13,10 @@ build:
 	cmake --build .
 
 PROJECT_PACKAGE_NAME = inclination-idl-fastdds
-fastddsgen_FULL_VERSION = 0.1.0
 GITHUB_RUN_NUMBER ?= 0
+fastddsgen_FULL_VERSION = 0.1.0-$(GITHUB_RUN_NUMBER)
 ARCH = amd64
-STAGE_DIR = $(PROJECT_PACKAGE_NAME)_$(fastddsgen_FULL_VERSION)-$(GITHUB_RUN_NUMBER)_$(ARCH)
+STAGE_DIR = $(PROJECT_PACKAGE_NAME)_$(fastddsgen_FULL_VERSION)_$(ARCH)
 debian_dir = $(PWD)/$(STAGE_DIR)/DEBIAN
 control_file = $(debian_dir)/control
 PROJECT_MAINTAINER = you@example.com
