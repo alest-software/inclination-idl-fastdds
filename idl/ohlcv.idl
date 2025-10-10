@@ -38,18 +38,22 @@ module inclination {
         };
 
         struct Ohlcv {
+            key_t exchange_id;
             key_t symbol_id;
             key_t interval_id;
             timestamp_t etime;
             OhlcvData data;
         };
 
+/*
         struct OhlcvSeries {
+            key_t exchange_id;
             key_t symbol_id;
             key_t interval_id;
             timestamp_t etime;
             sequence<OhlcvData> data;
         };
+*/
 
     };
 };
