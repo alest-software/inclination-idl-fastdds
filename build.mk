@@ -15,7 +15,7 @@ build:
 PROJECT_PACKAGE_NAME = inclination-idl-fastdds
 GITHUB_RUN_NUMBER ?= 0
 fastddsgen_FULL_VERSION = 0.1.0-$(GITHUB_RUN_NUMBER)
-ARCH = amd64
+ARCH = $(shell dpkg --print-architecture)
 STAGE_DIR = $(PROJECT_PACKAGE_NAME)_$(fastddsgen_FULL_VERSION)_$(ARCH)
 debian_dir = $(PWD)/$(STAGE_DIR)/DEBIAN
 control_file = $(debian_dir)/control
