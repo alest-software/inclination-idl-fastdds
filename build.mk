@@ -1,6 +1,6 @@
 all: build stage control package
 
-CMAKE_MODULE_PATH=/opt/fastcdr
+CMAKE_MODULE_PATH=/opt/foonathan;/opt/fastcdr
 
 build:
 	mkdir -p ./build
