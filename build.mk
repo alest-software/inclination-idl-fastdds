@@ -1,15 +1,9 @@
-all: source build stage control package
-
-fastddsgen = /opt/fastdds/bin/fastddsgen
-
-source:
-	mkdir -p source
-	cd idl; $(fastddsgen) -replace -python -d ../source common.idl ohlcv.idl
+all: build stage control package
 
 build:
 	mkdir -p ./build
 	cd build; \
-	cmake -DCMAKE_MODULE_PATH=$(PWD)/cmake -DCMAKE_INSTALL_PREFIX=/opt/inclination ../source; \
+	cmake -DCMAKE_MODULE_PATH=$(PWD)/cmake -DCMAKE_INSTALL_PREFIX=/opt/inclination ../src; \
 	cmake --build .
 
 PROJECT_PACKAGE_NAME = inclination-idl-fastdds
@@ -45,5 +39,5 @@ package:
 	dpkg-deb --build $(fastddsgen_BINARY_PACKAGE_NAME)
 
 
-.PHONY: source build stage control package
+.PHONY: build stage control package
 
