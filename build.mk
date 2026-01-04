@@ -1,10 +1,11 @@
 all: build stage control package
 
-CMAKE_MODULE_PATH=/opt/foonathan;/opt/fastcdr
+#CMAKE_PREFIX_PATH=/opt/foonathan;/opt/fastcdr
+CMAKE_PREFIX_PATH=/opt/foonathan
 
 build:
 	mkdir -p ./build
-	cd build && cmake -DCMAKE_MODULE_PATH="$(CMAKE_MODULE_PATH)" -DCMAKE_INSTALL_PREFIX=/opt/inclination ../src
+	cd build && cmake -DCMAKE_PREFIX_PATH="$(CMAKE_PREFIX_PATH)" -DCMAKE_INSTALL_PREFIX=/opt/inclination ../src
 	cd build && cmake --build .
 
 package = inclination-idl-fastdds
