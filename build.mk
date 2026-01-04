@@ -1,9 +1,12 @@
 all: build stage control package
 
+#CMAKE_MODULE_PATH=$(PWD)/cmake;/opt/fastcdr
+CMAKE_MODULE_PATH=/opt/fastcdr
+
 build:
 	mkdir -p ./build
 	cd build; \
-	cmake -DCMAKE_MODULE_PATH=$(PWD)/cmake -DCMAKE_INSTALL_PREFIX=/opt/inclination ../src; \
+	cmake -DCMAKE_MODULE_PATH="$(CMAKE_MODULE_PATH)" -DCMAKE_INSTALL_PREFIX=/opt/inclination ../src; \
 	cmake --build .
 
 PROJECT_PACKAGE_NAME = inclination-idl-fastdds
