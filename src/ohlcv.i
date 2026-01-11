@@ -452,6 +452,85 @@ namespace swig {
     }
 }
 
+////////////////////////////////////////////////////////
+// Binding for class inclination::idl_ex::OhlcvSeries
+////////////////////////////////////////////////////////
+
+// Ignore overloaded methods that have no application on Python
+// Otherwise they will issue a warning
+%ignore inclination::idl_ex::OhlcvSeries::OhlcvSeries(inclination::idl_ex::OhlcvSeries&&);
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Avoid a warning ignoring all but one
+%ignore inclination::idl_ex::OhlcvSeries::exchange_id(inclination::idl_ex::key_t&&);
+
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore inclination::idl_ex::OhlcvSeries::exchange_id();
+%rename("%s") inclination::idl_ex::OhlcvSeries::exchange_id() const;
+
+
+
+%ignore inclination::idl_ex::OhlcvSeries::symbol_id(inclination::idl_ex::key_t&&);
+
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore inclination::idl_ex::OhlcvSeries::symbol_id();
+%rename("%s") inclination::idl_ex::OhlcvSeries::symbol_id() const;
+
+
+
+%ignore inclination::idl_ex::OhlcvSeries::interval_id(inclination::idl_ex::key_t&&);
+
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore inclination::idl_ex::OhlcvSeries::interval_id();
+%rename("%s") inclination::idl_ex::OhlcvSeries::interval_id() const;
+
+
+
+%ignore inclination::idl_ex::OhlcvSeries::etime(inclination::idl_ex::timestamp_t&&);
+
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore inclination::idl_ex::OhlcvSeries::etime();
+%rename("%s") inclination::idl_ex::OhlcvSeries::etime() const;
+
+
+
+%ignore inclination::idl_ex::OhlcvSeries::data(std::vector<inclination::idl_ex::OhlcvData>&&);
+
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore inclination::idl_ex::OhlcvSeries::data() const;
+%template(OhlcvData_vector) std::vector<inclination::idl_ex::OhlcvData>;
+
+
+%template(_OhlcvSeriesSeq) eprosima::fastdds::dds::LoanableTypedCollection<inclination::idl_ex::OhlcvSeries, std::false_type>;
+%template(OhlcvSeriesSeq) eprosima::fastdds::dds::LoanableSequence<inclination::idl_ex::OhlcvSeries, std::false_type>;
+%extend eprosima::fastdds::dds::LoanableSequence<inclination::idl_ex::OhlcvSeries, std::false_type>
+{
+    size_t __len__() const
+    {
+        return self->length();
+    }
+
+    const inclination::idl_ex::OhlcvSeries& __getitem__(size_t i) const
+    {
+        return (*self)[i];
+    }
+}
+
 
 // Include the class interfaces
 %include "ohlcv.hpp"

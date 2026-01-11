@@ -994,6 +994,206 @@ void register_Ohlcv_type_identifier(
                     "inclination::idl_ex::Ohlcv already registered in TypeObjectRegistry for a different type.");
         }
     }
+}// TypeIdentifier is returned by reference: dependent structures/unions are registered in this same method
+void register_OhlcvSeries_type_identifier(
+        TypeIdentifierPair& type_ids_OhlcvSeries)
+{
+
+    ReturnCode_t return_code_OhlcvSeries {eprosima::fastdds::dds::RETCODE_OK};
+    return_code_OhlcvSeries =
+        eprosima::fastdds::dds::DomainParticipantFactory::get_instance()->type_object_registry().get_type_identifiers(
+        "inclination::idl_ex::OhlcvSeries", type_ids_OhlcvSeries);
+    if (eprosima::fastdds::dds::RETCODE_OK != return_code_OhlcvSeries)
+    {
+        StructTypeFlag struct_flags_OhlcvSeries = TypeObjectUtils::build_struct_type_flag(eprosima::fastdds::dds::xtypes::ExtensibilityKind::APPENDABLE,
+                false, false);
+        QualifiedTypeName type_name_OhlcvSeries = "inclination::idl_ex::OhlcvSeries";
+        eprosima::fastcdr::optional<AppliedBuiltinTypeAnnotations> type_ann_builtin_OhlcvSeries;
+        eprosima::fastcdr::optional<AppliedAnnotationSeq> ann_custom_OhlcvSeries;
+        CompleteTypeDetail detail_OhlcvSeries = TypeObjectUtils::build_complete_type_detail(type_ann_builtin_OhlcvSeries, ann_custom_OhlcvSeries, type_name_OhlcvSeries.to_string());
+        CompleteStructHeader header_OhlcvSeries;
+        header_OhlcvSeries = TypeObjectUtils::build_complete_struct_header(TypeIdentifier(), detail_OhlcvSeries);
+        CompleteStructMemberSeq member_seq_OhlcvSeries;
+        {
+            TypeIdentifierPair type_ids_exchange_id;
+            ReturnCode_t return_code_exchange_id {eprosima::fastdds::dds::RETCODE_OK};
+            return_code_exchange_id =
+                eprosima::fastdds::dds::DomainParticipantFactory::get_instance()->type_object_registry().get_type_identifiers(
+                "inclination::idl_ex::key_t", type_ids_exchange_id);
+
+            if (eprosima::fastdds::dds::RETCODE_OK != return_code_exchange_id)
+            {
+                ::inclination::idl_ex::register_key_t_type_identifier(type_ids_exchange_id);
+            }
+            StructMemberFlag member_flags_exchange_id = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
+                    false, false, false, false);
+            MemberId member_id_exchange_id = 0x00000000;
+            bool common_exchange_id_ec {false};
+            CommonStructMember common_exchange_id {TypeObjectUtils::build_common_struct_member(member_id_exchange_id, member_flags_exchange_id, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_exchange_id, common_exchange_id_ec))};
+            if (!common_exchange_id_ec)
+            {
+                EPROSIMA_LOG_ERROR(XTYPES_TYPE_REPRESENTATION, "Structure exchange_id member TypeIdentifier inconsistent.");
+                return;
+            }
+            MemberName name_exchange_id = "exchange_id";
+            eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_exchange_id;
+            ann_custom_OhlcvSeries.reset();
+            CompleteMemberDetail detail_exchange_id = TypeObjectUtils::build_complete_member_detail(name_exchange_id, member_ann_builtin_exchange_id, ann_custom_OhlcvSeries);
+            CompleteStructMember member_exchange_id = TypeObjectUtils::build_complete_struct_member(common_exchange_id, detail_exchange_id);
+            TypeObjectUtils::add_complete_struct_member(member_seq_OhlcvSeries, member_exchange_id);
+        }
+        {
+            TypeIdentifierPair type_ids_symbol_id;
+            ReturnCode_t return_code_symbol_id {eprosima::fastdds::dds::RETCODE_OK};
+            return_code_symbol_id =
+                eprosima::fastdds::dds::DomainParticipantFactory::get_instance()->type_object_registry().get_type_identifiers(
+                "inclination::idl_ex::key_t", type_ids_symbol_id);
+
+            if (eprosima::fastdds::dds::RETCODE_OK != return_code_symbol_id)
+            {
+                ::inclination::idl_ex::register_key_t_type_identifier(type_ids_symbol_id);
+            }
+            StructMemberFlag member_flags_symbol_id = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
+                    false, false, false, false);
+            MemberId member_id_symbol_id = 0x00000001;
+            bool common_symbol_id_ec {false};
+            CommonStructMember common_symbol_id {TypeObjectUtils::build_common_struct_member(member_id_symbol_id, member_flags_symbol_id, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_symbol_id, common_symbol_id_ec))};
+            if (!common_symbol_id_ec)
+            {
+                EPROSIMA_LOG_ERROR(XTYPES_TYPE_REPRESENTATION, "Structure symbol_id member TypeIdentifier inconsistent.");
+                return;
+            }
+            MemberName name_symbol_id = "symbol_id";
+            eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_symbol_id;
+            ann_custom_OhlcvSeries.reset();
+            CompleteMemberDetail detail_symbol_id = TypeObjectUtils::build_complete_member_detail(name_symbol_id, member_ann_builtin_symbol_id, ann_custom_OhlcvSeries);
+            CompleteStructMember member_symbol_id = TypeObjectUtils::build_complete_struct_member(common_symbol_id, detail_symbol_id);
+            TypeObjectUtils::add_complete_struct_member(member_seq_OhlcvSeries, member_symbol_id);
+        }
+        {
+            TypeIdentifierPair type_ids_interval_id;
+            ReturnCode_t return_code_interval_id {eprosima::fastdds::dds::RETCODE_OK};
+            return_code_interval_id =
+                eprosima::fastdds::dds::DomainParticipantFactory::get_instance()->type_object_registry().get_type_identifiers(
+                "inclination::idl_ex::key_t", type_ids_interval_id);
+
+            if (eprosima::fastdds::dds::RETCODE_OK != return_code_interval_id)
+            {
+                ::inclination::idl_ex::register_key_t_type_identifier(type_ids_interval_id);
+            }
+            StructMemberFlag member_flags_interval_id = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
+                    false, false, false, false);
+            MemberId member_id_interval_id = 0x00000002;
+            bool common_interval_id_ec {false};
+            CommonStructMember common_interval_id {TypeObjectUtils::build_common_struct_member(member_id_interval_id, member_flags_interval_id, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_interval_id, common_interval_id_ec))};
+            if (!common_interval_id_ec)
+            {
+                EPROSIMA_LOG_ERROR(XTYPES_TYPE_REPRESENTATION, "Structure interval_id member TypeIdentifier inconsistent.");
+                return;
+            }
+            MemberName name_interval_id = "interval_id";
+            eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_interval_id;
+            ann_custom_OhlcvSeries.reset();
+            CompleteMemberDetail detail_interval_id = TypeObjectUtils::build_complete_member_detail(name_interval_id, member_ann_builtin_interval_id, ann_custom_OhlcvSeries);
+            CompleteStructMember member_interval_id = TypeObjectUtils::build_complete_struct_member(common_interval_id, detail_interval_id);
+            TypeObjectUtils::add_complete_struct_member(member_seq_OhlcvSeries, member_interval_id);
+        }
+        {
+            TypeIdentifierPair type_ids_etime;
+            ReturnCode_t return_code_etime {eprosima::fastdds::dds::RETCODE_OK};
+            return_code_etime =
+                eprosima::fastdds::dds::DomainParticipantFactory::get_instance()->type_object_registry().get_type_identifiers(
+                "inclination::idl_ex::timestamp_t", type_ids_etime);
+
+            if (eprosima::fastdds::dds::RETCODE_OK != return_code_etime)
+            {
+                ::inclination::idl_ex::register_timestamp_t_type_identifier(type_ids_etime);
+            }
+            StructMemberFlag member_flags_etime = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
+                    false, false, false, false);
+            MemberId member_id_etime = 0x00000003;
+            bool common_etime_ec {false};
+            CommonStructMember common_etime {TypeObjectUtils::build_common_struct_member(member_id_etime, member_flags_etime, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_etime, common_etime_ec))};
+            if (!common_etime_ec)
+            {
+                EPROSIMA_LOG_ERROR(XTYPES_TYPE_REPRESENTATION, "Structure etime member TypeIdentifier inconsistent.");
+                return;
+            }
+            MemberName name_etime = "etime";
+            eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_etime;
+            ann_custom_OhlcvSeries.reset();
+            CompleteMemberDetail detail_etime = TypeObjectUtils::build_complete_member_detail(name_etime, member_ann_builtin_etime, ann_custom_OhlcvSeries);
+            CompleteStructMember member_etime = TypeObjectUtils::build_complete_struct_member(common_etime, detail_etime);
+            TypeObjectUtils::add_complete_struct_member(member_seq_OhlcvSeries, member_etime);
+        }
+        {
+            TypeIdentifierPair type_ids_data;
+            ReturnCode_t return_code_data {eprosima::fastdds::dds::RETCODE_OK};
+            return_code_data =
+                eprosima::fastdds::dds::DomainParticipantFactory::get_instance()->type_object_registry().get_type_identifiers(
+                "anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded", type_ids_data);
+
+            if (eprosima::fastdds::dds::RETCODE_OK != return_code_data)
+            {
+                return_code_data =
+                    eprosima::fastdds::dds::DomainParticipantFactory::get_instance()->type_object_registry().get_type_identifiers(
+                    "inclination::idl_ex::OhlcvData", type_ids_data);
+
+                if (eprosima::fastdds::dds::RETCODE_OK != return_code_data)
+                {
+                    ::inclination::idl_ex::register_OhlcvData_type_identifier(type_ids_data);
+                }
+                bool element_identifier_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded_ec {false};
+                TypeIdentifier* element_identifier_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded {new TypeIdentifier(TypeObjectUtils::retrieve_complete_type_identifier(type_ids_data, element_identifier_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded_ec))};
+                if (!element_identifier_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded_ec)
+                {
+                    EPROSIMA_LOG_ERROR(XTYPES_TYPE_REPRESENTATION, "Sequence element TypeIdentifier inconsistent.");
+                    return;
+                }
+                EquivalenceKind equiv_kind_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded = EK_COMPLETE;
+                if (TK_NONE == type_ids_data.type_identifier2()._d())
+                {
+                    equiv_kind_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded = EK_BOTH;
+                }
+                CollectionElementFlag element_flags_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded = 0;
+                PlainCollectionHeader header_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded = TypeObjectUtils::build_plain_collection_header(equiv_kind_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded, element_flags_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded);
+                {
+                    SBound bound = 0;
+                    PlainSequenceSElemDefn seq_sdefn = TypeObjectUtils::build_plain_sequence_s_elem_defn(header_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded, bound,
+                                eprosima::fastcdr::external<TypeIdentifier>(element_identifier_anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded));
+                    if (eprosima::fastdds::dds::RETCODE_BAD_PARAMETER ==
+                            TypeObjectUtils::build_and_register_s_sequence_type_identifier(seq_sdefn, "anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded", type_ids_data))
+                    {
+                        EPROSIMA_LOG_ERROR(XTYPES_TYPE_REPRESENTATION,
+                            "anonymous_sequence_inclination_idl_ex_OhlcvData_unbounded already registered in TypeObjectRegistry for a different type.");
+                    }
+                }
+            }
+            StructMemberFlag member_flags_data = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
+                    false, false, false, false);
+            MemberId member_id_data = 0x00000004;
+            bool common_data_ec {false};
+            CommonStructMember common_data {TypeObjectUtils::build_common_struct_member(member_id_data, member_flags_data, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_data, common_data_ec))};
+            if (!common_data_ec)
+            {
+                EPROSIMA_LOG_ERROR(XTYPES_TYPE_REPRESENTATION, "Structure data member TypeIdentifier inconsistent.");
+                return;
+            }
+            MemberName name_data = "data";
+            eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_data;
+            ann_custom_OhlcvSeries.reset();
+            CompleteMemberDetail detail_data = TypeObjectUtils::build_complete_member_detail(name_data, member_ann_builtin_data, ann_custom_OhlcvSeries);
+            CompleteStructMember member_data = TypeObjectUtils::build_complete_struct_member(common_data, detail_data);
+            TypeObjectUtils::add_complete_struct_member(member_seq_OhlcvSeries, member_data);
+        }
+        CompleteStructType struct_type_OhlcvSeries = TypeObjectUtils::build_complete_struct_type(struct_flags_OhlcvSeries, header_OhlcvSeries, member_seq_OhlcvSeries);
+        if (eprosima::fastdds::dds::RETCODE_BAD_PARAMETER ==
+                TypeObjectUtils::build_and_register_struct_type_object(struct_type_OhlcvSeries, type_name_OhlcvSeries.to_string(), type_ids_OhlcvSeries))
+        {
+            EPROSIMA_LOG_ERROR(XTYPES_TYPE_REPRESENTATION,
+                    "inclination::idl_ex::OhlcvSeries already registered in TypeObjectRegistry for a different type.");
+        }
+    }
 }
 } // namespace idl_ex
 

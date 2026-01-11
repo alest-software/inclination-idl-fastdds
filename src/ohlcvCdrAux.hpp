@@ -23,24 +23,28 @@
 #define FAST_DDS_GENERATED__INCLINATION_IDL_EX_OHLCVCDRAUX_HPP
 
 #include "ohlcv.hpp"
-constexpr uint32_t inclination_idl_ex_symbol_t_max_cdr_typesize {1572UL};
-constexpr uint32_t inclination_idl_ex_symbol_t_max_key_cdr_typesize {0UL};
-
 constexpr uint32_t inclination_idl_ex_asset_t_max_cdr_typesize {524UL};
 constexpr uint32_t inclination_idl_ex_asset_t_max_key_cdr_typesize {0UL};
 
 
 
 
-constexpr uint32_t inclination_idl_ex_OhlcvData_max_cdr_typesize {56UL};
-constexpr uint32_t inclination_idl_ex_OhlcvData_max_key_cdr_typesize {0UL};
-
-
 constexpr uint32_t inclination_idl_ex_interval_t_max_cdr_typesize {524UL};
 constexpr uint32_t inclination_idl_ex_interval_t_max_key_cdr_typesize {0UL};
 
+
+constexpr uint32_t inclination_idl_ex_symbol_t_max_cdr_typesize {1572UL};
+constexpr uint32_t inclination_idl_ex_symbol_t_max_key_cdr_typesize {0UL};
+
+
+constexpr uint32_t inclination_idl_ex_OhlcvData_max_cdr_typesize {56UL};
+constexpr uint32_t inclination_idl_ex_OhlcvData_max_key_cdr_typesize {0UL};
+
 constexpr uint32_t inclination_idl_ex_exchange_t_max_cdr_typesize {524UL};
 constexpr uint32_t inclination_idl_ex_exchange_t_max_key_cdr_typesize {0UL};
+
+constexpr uint32_t inclination_idl_ex_OhlcvSeries_max_cdr_typesize {800UL};
+constexpr uint32_t inclination_idl_ex_OhlcvSeries_max_key_cdr_typesize {0UL};
 
 constexpr uint32_t inclination_idl_ex_Ohlcv_max_cdr_typesize {848UL};
 constexpr uint32_t inclination_idl_ex_Ohlcv_max_key_cdr_typesize {0UL};
@@ -75,6 +79,10 @@ eProsima_user_DllExport void serialize_key(
 eProsima_user_DllExport void serialize_key(
         eprosima::fastcdr::Cdr& scdr,
         const inclination::idl_ex::Ohlcv& data);
+
+eProsima_user_DllExport void serialize_key(
+        eprosima::fastcdr::Cdr& scdr,
+        const inclination::idl_ex::OhlcvSeries& data);
 
 
 } // namespace fastcdr

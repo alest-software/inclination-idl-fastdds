@@ -25,6 +25,8 @@
 #include <cstdint>
 #include <string>
 #include <utility>
+#include <vector>
+
 #include <fastcdr/cdr/fixed_size_string.hpp>
 #include "common.hpp"
 
@@ -1493,6 +1495,317 @@ private:
     key_t m_interval_id;
     timestamp_t m_etime{0.0};
     OhlcvData m_data;
+
+};
+/*!
+ * @brief This class represents the structure OhlcvSeries defined by the user in the IDL file.
+ * @ingroup ohlcv
+ */
+class OhlcvSeries
+{
+public:
+
+    /*!
+     * @brief Default constructor.
+     */
+    eProsima_user_DllExport OhlcvSeries()
+    {
+    }
+
+    /*!
+     * @brief Default destructor.
+     */
+    eProsima_user_DllExport ~OhlcvSeries()
+    {
+    }
+
+    /*!
+     * @brief Copy constructor.
+     * @param x Reference to the object OhlcvSeries that will be copied.
+     */
+    eProsima_user_DllExport OhlcvSeries(
+            const OhlcvSeries& x)
+    {
+                    m_exchange_id = x.m_exchange_id;
+
+                    m_symbol_id = x.m_symbol_id;
+
+                    m_interval_id = x.m_interval_id;
+
+                    m_etime = x.m_etime;
+
+                    m_data = x.m_data;
+
+    }
+
+    /*!
+     * @brief Move constructor.
+     * @param x Reference to the object OhlcvSeries that will be copied.
+     */
+    eProsima_user_DllExport OhlcvSeries(
+            OhlcvSeries&& x) noexcept
+    {
+        m_exchange_id = std::move(x.m_exchange_id);
+        m_symbol_id = std::move(x.m_symbol_id);
+        m_interval_id = std::move(x.m_interval_id);
+        m_etime = x.m_etime;
+        m_data = std::move(x.m_data);
+    }
+
+    /*!
+     * @brief Copy assignment.
+     * @param x Reference to the object OhlcvSeries that will be copied.
+     */
+    eProsima_user_DllExport OhlcvSeries& operator =(
+            const OhlcvSeries& x)
+    {
+
+                    m_exchange_id = x.m_exchange_id;
+
+                    m_symbol_id = x.m_symbol_id;
+
+                    m_interval_id = x.m_interval_id;
+
+                    m_etime = x.m_etime;
+
+                    m_data = x.m_data;
+
+        return *this;
+    }
+
+    /*!
+     * @brief Move assignment.
+     * @param x Reference to the object OhlcvSeries that will be copied.
+     */
+    eProsima_user_DllExport OhlcvSeries& operator =(
+            OhlcvSeries&& x) noexcept
+    {
+
+        m_exchange_id = std::move(x.m_exchange_id);
+        m_symbol_id = std::move(x.m_symbol_id);
+        m_interval_id = std::move(x.m_interval_id);
+        m_etime = x.m_etime;
+        m_data = std::move(x.m_data);
+        return *this;
+    }
+
+    /*!
+     * @brief Comparison operator.
+     * @param x OhlcvSeries object to compare.
+     */
+    eProsima_user_DllExport bool operator ==(
+            const OhlcvSeries& x) const
+    {
+        return (m_exchange_id == x.m_exchange_id &&
+           m_symbol_id == x.m_symbol_id &&
+           m_interval_id == x.m_interval_id &&
+           m_etime == x.m_etime &&
+           m_data == x.m_data);
+    }
+
+    /*!
+     * @brief Comparison operator.
+     * @param x OhlcvSeries object to compare.
+     */
+    eProsima_user_DllExport bool operator !=(
+            const OhlcvSeries& x) const
+    {
+        return !(*this == x);
+    }
+
+    /*!
+     * @brief This function copies the value in member exchange_id
+     * @param _exchange_id New value to be copied in member exchange_id
+     */
+    eProsima_user_DllExport void exchange_id(
+            const key_t& _exchange_id)
+    {
+        m_exchange_id = _exchange_id;
+    }
+
+    /*!
+     * @brief This function moves the value in member exchange_id
+     * @param _exchange_id New value to be moved in member exchange_id
+     */
+    eProsima_user_DllExport void exchange_id(
+            key_t&& _exchange_id)
+    {
+        m_exchange_id = std::move(_exchange_id);
+    }
+
+    /*!
+     * @brief This function returns a constant reference to member exchange_id
+     * @return Constant reference to member exchange_id
+     */
+    eProsima_user_DllExport const key_t& exchange_id() const
+    {
+        return m_exchange_id;
+    }
+
+    /*!
+     * @brief This function returns a reference to member exchange_id
+     * @return Reference to member exchange_id
+     */
+    eProsima_user_DllExport key_t& exchange_id()
+    {
+        return m_exchange_id;
+    }
+
+
+    /*!
+     * @brief This function copies the value in member symbol_id
+     * @param _symbol_id New value to be copied in member symbol_id
+     */
+    eProsima_user_DllExport void symbol_id(
+            const key_t& _symbol_id)
+    {
+        m_symbol_id = _symbol_id;
+    }
+
+    /*!
+     * @brief This function moves the value in member symbol_id
+     * @param _symbol_id New value to be moved in member symbol_id
+     */
+    eProsima_user_DllExport void symbol_id(
+            key_t&& _symbol_id)
+    {
+        m_symbol_id = std::move(_symbol_id);
+    }
+
+    /*!
+     * @brief This function returns a constant reference to member symbol_id
+     * @return Constant reference to member symbol_id
+     */
+    eProsima_user_DllExport const key_t& symbol_id() const
+    {
+        return m_symbol_id;
+    }
+
+    /*!
+     * @brief This function returns a reference to member symbol_id
+     * @return Reference to member symbol_id
+     */
+    eProsima_user_DllExport key_t& symbol_id()
+    {
+        return m_symbol_id;
+    }
+
+
+    /*!
+     * @brief This function copies the value in member interval_id
+     * @param _interval_id New value to be copied in member interval_id
+     */
+    eProsima_user_DllExport void interval_id(
+            const key_t& _interval_id)
+    {
+        m_interval_id = _interval_id;
+    }
+
+    /*!
+     * @brief This function moves the value in member interval_id
+     * @param _interval_id New value to be moved in member interval_id
+     */
+    eProsima_user_DllExport void interval_id(
+            key_t&& _interval_id)
+    {
+        m_interval_id = std::move(_interval_id);
+    }
+
+    /*!
+     * @brief This function returns a constant reference to member interval_id
+     * @return Constant reference to member interval_id
+     */
+    eProsima_user_DllExport const key_t& interval_id() const
+    {
+        return m_interval_id;
+    }
+
+    /*!
+     * @brief This function returns a reference to member interval_id
+     * @return Reference to member interval_id
+     */
+    eProsima_user_DllExport key_t& interval_id()
+    {
+        return m_interval_id;
+    }
+
+
+    /*!
+     * @brief This function sets a value in member etime
+     * @param _etime New value for member etime
+     */
+    eProsima_user_DllExport void etime(
+            timestamp_t _etime)
+    {
+        m_etime = _etime;
+    }
+
+    /*!
+     * @brief This function returns the value of member etime
+     * @return Value of member etime
+     */
+    eProsima_user_DllExport timestamp_t etime() const
+    {
+        return m_etime;
+    }
+
+    /*!
+     * @brief This function returns a reference to member etime
+     * @return Reference to member etime
+     */
+    eProsima_user_DllExport timestamp_t& etime()
+    {
+        return m_etime;
+    }
+
+
+    /*!
+     * @brief This function copies the value in member data
+     * @param _data New value to be copied in member data
+     */
+    eProsima_user_DllExport void data(
+            const std::vector<OhlcvData>& _data)
+    {
+        m_data = _data;
+    }
+
+    /*!
+     * @brief This function moves the value in member data
+     * @param _data New value to be moved in member data
+     */
+    eProsima_user_DllExport void data(
+            std::vector<OhlcvData>&& _data)
+    {
+        m_data = std::move(_data);
+    }
+
+    /*!
+     * @brief This function returns a constant reference to member data
+     * @return Constant reference to member data
+     */
+    eProsima_user_DllExport const std::vector<OhlcvData>& data() const
+    {
+        return m_data;
+    }
+
+    /*!
+     * @brief This function returns a reference to member data
+     * @return Reference to member data
+     */
+    eProsima_user_DllExport std::vector<OhlcvData>& data()
+    {
+        return m_data;
+    }
+
+
+
+private:
+
+    key_t m_exchange_id;
+    key_t m_symbol_id;
+    key_t m_interval_id;
+    timestamp_t m_etime{0.0};
+    std::vector<OhlcvData> m_data;
 
 };
 
