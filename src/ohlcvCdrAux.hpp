@@ -44,10 +44,10 @@ constexpr uint32_t inclination_idl_ex_exchange_t_max_cdr_typesize {524UL};
 constexpr uint32_t inclination_idl_ex_exchange_t_max_key_cdr_typesize {0UL};
 
 constexpr uint32_t inclination_idl_ex_OhlcvSeries_max_cdr_typesize {800UL};
-constexpr uint32_t inclination_idl_ex_OhlcvSeries_max_key_cdr_typesize {0UL};
+constexpr uint32_t inclination_idl_ex_OhlcvSeries_max_key_cdr_typesize {780UL};
 
 constexpr uint32_t inclination_idl_ex_Ohlcv_max_cdr_typesize {848UL};
-constexpr uint32_t inclination_idl_ex_Ohlcv_max_key_cdr_typesize {0UL};
+constexpr uint32_t inclination_idl_ex_Ohlcv_max_key_cdr_typesize {780UL};
 
 
 namespace eprosima {

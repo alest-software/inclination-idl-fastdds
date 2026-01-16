@@ -949,7 +949,7 @@ namespace inclination {
             uint32_t type_size = inclination_idl_ex_Ohlcv_max_cdr_typesize;
             type_size += static_cast<uint32_t>(eprosima::fastcdr::Cdr::alignment(type_size, 4)); /* possible submessage alignment */
             max_serialized_type_size = type_size + 4; /*encapsulation*/
-            is_compute_key_provided = false;
+            is_compute_key_provided = true;
             uint32_t key_length = inclination_idl_ex_Ohlcv_max_key_cdr_typesize > 16 ? inclination_idl_ex_Ohlcv_max_key_cdr_typesize : 16;
             key_buffer_ = reinterpret_cast<unsigned char*>(malloc(key_length));
             memset(key_buffer_, 0, key_length);
@@ -1131,7 +1131,7 @@ namespace inclination {
             uint32_t type_size = inclination_idl_ex_OhlcvSeries_max_cdr_typesize;
             type_size += static_cast<uint32_t>(eprosima::fastcdr::Cdr::alignment(type_size, 4)); /* possible submessage alignment */
             max_serialized_type_size = type_size + 4; /*encapsulation*/
-            is_compute_key_provided = false;
+            is_compute_key_provided = true;
             uint32_t key_length = inclination_idl_ex_OhlcvSeries_max_key_cdr_typesize > 16 ? inclination_idl_ex_OhlcvSeries_max_key_cdr_typesize : 16;
             key_buffer_ = reinterpret_cast<unsigned char*>(malloc(key_length));
             memset(key_buffer_, 0, key_length);

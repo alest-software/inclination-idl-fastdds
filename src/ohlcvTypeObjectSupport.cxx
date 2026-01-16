@@ -858,7 +858,7 @@ void register_Ohlcv_type_identifier(
                 ::inclination::idl_ex::register_key_t_type_identifier(type_ids_exchange_id);
             }
             StructMemberFlag member_flags_exchange_id = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
-                    false, false, false, false);
+                    false, false, true, false);
             MemberId member_id_exchange_id = 0x00000000;
             bool common_exchange_id_ec {false};
             CommonStructMember common_exchange_id {TypeObjectUtils::build_common_struct_member(member_id_exchange_id, member_flags_exchange_id, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_exchange_id, common_exchange_id_ec))};
@@ -870,6 +870,19 @@ void register_Ohlcv_type_identifier(
             MemberName name_exchange_id = "exchange_id";
             eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_exchange_id;
             ann_custom_Ohlcv.reset();
+            AppliedAnnotationSeq tmp_ann_custom_exchange_id;
+            eprosima::fastcdr::optional<std::string> unit_exchange_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> min_exchange_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> max_exchange_id;
+            eprosima::fastcdr::optional<std::string> hash_id_exchange_id;
+            if (unit_exchange_id.has_value() || min_exchange_id.has_value() || max_exchange_id.has_value() || hash_id_exchange_id.has_value())
+            {
+                member_ann_builtin_exchange_id = TypeObjectUtils::build_applied_builtin_member_annotations(unit_exchange_id, min_exchange_id, max_exchange_id, hash_id_exchange_id);
+            }
+            if (!tmp_ann_custom_exchange_id.empty())
+            {
+                ann_custom_Ohlcv = tmp_ann_custom_exchange_id;
+            }
             CompleteMemberDetail detail_exchange_id = TypeObjectUtils::build_complete_member_detail(name_exchange_id, member_ann_builtin_exchange_id, ann_custom_Ohlcv);
             CompleteStructMember member_exchange_id = TypeObjectUtils::build_complete_struct_member(common_exchange_id, detail_exchange_id);
             TypeObjectUtils::add_complete_struct_member(member_seq_Ohlcv, member_exchange_id);
@@ -886,7 +899,7 @@ void register_Ohlcv_type_identifier(
                 ::inclination::idl_ex::register_key_t_type_identifier(type_ids_symbol_id);
             }
             StructMemberFlag member_flags_symbol_id = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
-                    false, false, false, false);
+                    false, false, true, false);
             MemberId member_id_symbol_id = 0x00000001;
             bool common_symbol_id_ec {false};
             CommonStructMember common_symbol_id {TypeObjectUtils::build_common_struct_member(member_id_symbol_id, member_flags_symbol_id, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_symbol_id, common_symbol_id_ec))};
@@ -898,6 +911,19 @@ void register_Ohlcv_type_identifier(
             MemberName name_symbol_id = "symbol_id";
             eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_symbol_id;
             ann_custom_Ohlcv.reset();
+            AppliedAnnotationSeq tmp_ann_custom_symbol_id;
+            eprosima::fastcdr::optional<std::string> unit_symbol_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> min_symbol_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> max_symbol_id;
+            eprosima::fastcdr::optional<std::string> hash_id_symbol_id;
+            if (unit_symbol_id.has_value() || min_symbol_id.has_value() || max_symbol_id.has_value() || hash_id_symbol_id.has_value())
+            {
+                member_ann_builtin_symbol_id = TypeObjectUtils::build_applied_builtin_member_annotations(unit_symbol_id, min_symbol_id, max_symbol_id, hash_id_symbol_id);
+            }
+            if (!tmp_ann_custom_symbol_id.empty())
+            {
+                ann_custom_Ohlcv = tmp_ann_custom_symbol_id;
+            }
             CompleteMemberDetail detail_symbol_id = TypeObjectUtils::build_complete_member_detail(name_symbol_id, member_ann_builtin_symbol_id, ann_custom_Ohlcv);
             CompleteStructMember member_symbol_id = TypeObjectUtils::build_complete_struct_member(common_symbol_id, detail_symbol_id);
             TypeObjectUtils::add_complete_struct_member(member_seq_Ohlcv, member_symbol_id);
@@ -914,7 +940,7 @@ void register_Ohlcv_type_identifier(
                 ::inclination::idl_ex::register_key_t_type_identifier(type_ids_interval_id);
             }
             StructMemberFlag member_flags_interval_id = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
-                    false, false, false, false);
+                    false, false, true, false);
             MemberId member_id_interval_id = 0x00000002;
             bool common_interval_id_ec {false};
             CommonStructMember common_interval_id {TypeObjectUtils::build_common_struct_member(member_id_interval_id, member_flags_interval_id, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_interval_id, common_interval_id_ec))};
@@ -926,6 +952,19 @@ void register_Ohlcv_type_identifier(
             MemberName name_interval_id = "interval_id";
             eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_interval_id;
             ann_custom_Ohlcv.reset();
+            AppliedAnnotationSeq tmp_ann_custom_interval_id;
+            eprosima::fastcdr::optional<std::string> unit_interval_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> min_interval_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> max_interval_id;
+            eprosima::fastcdr::optional<std::string> hash_id_interval_id;
+            if (unit_interval_id.has_value() || min_interval_id.has_value() || max_interval_id.has_value() || hash_id_interval_id.has_value())
+            {
+                member_ann_builtin_interval_id = TypeObjectUtils::build_applied_builtin_member_annotations(unit_interval_id, min_interval_id, max_interval_id, hash_id_interval_id);
+            }
+            if (!tmp_ann_custom_interval_id.empty())
+            {
+                ann_custom_Ohlcv = tmp_ann_custom_interval_id;
+            }
             CompleteMemberDetail detail_interval_id = TypeObjectUtils::build_complete_member_detail(name_interval_id, member_ann_builtin_interval_id, ann_custom_Ohlcv);
             CompleteStructMember member_interval_id = TypeObjectUtils::build_complete_struct_member(common_interval_id, detail_interval_id);
             TypeObjectUtils::add_complete_struct_member(member_seq_Ohlcv, member_interval_id);
@@ -1026,7 +1065,7 @@ void register_OhlcvSeries_type_identifier(
                 ::inclination::idl_ex::register_key_t_type_identifier(type_ids_exchange_id);
             }
             StructMemberFlag member_flags_exchange_id = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
-                    false, false, false, false);
+                    false, false, true, false);
             MemberId member_id_exchange_id = 0x00000000;
             bool common_exchange_id_ec {false};
             CommonStructMember common_exchange_id {TypeObjectUtils::build_common_struct_member(member_id_exchange_id, member_flags_exchange_id, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_exchange_id, common_exchange_id_ec))};
@@ -1038,6 +1077,19 @@ void register_OhlcvSeries_type_identifier(
             MemberName name_exchange_id = "exchange_id";
             eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_exchange_id;
             ann_custom_OhlcvSeries.reset();
+            AppliedAnnotationSeq tmp_ann_custom_exchange_id;
+            eprosima::fastcdr::optional<std::string> unit_exchange_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> min_exchange_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> max_exchange_id;
+            eprosima::fastcdr::optional<std::string> hash_id_exchange_id;
+            if (unit_exchange_id.has_value() || min_exchange_id.has_value() || max_exchange_id.has_value() || hash_id_exchange_id.has_value())
+            {
+                member_ann_builtin_exchange_id = TypeObjectUtils::build_applied_builtin_member_annotations(unit_exchange_id, min_exchange_id, max_exchange_id, hash_id_exchange_id);
+            }
+            if (!tmp_ann_custom_exchange_id.empty())
+            {
+                ann_custom_OhlcvSeries = tmp_ann_custom_exchange_id;
+            }
             CompleteMemberDetail detail_exchange_id = TypeObjectUtils::build_complete_member_detail(name_exchange_id, member_ann_builtin_exchange_id, ann_custom_OhlcvSeries);
             CompleteStructMember member_exchange_id = TypeObjectUtils::build_complete_struct_member(common_exchange_id, detail_exchange_id);
             TypeObjectUtils::add_complete_struct_member(member_seq_OhlcvSeries, member_exchange_id);
@@ -1054,7 +1106,7 @@ void register_OhlcvSeries_type_identifier(
                 ::inclination::idl_ex::register_key_t_type_identifier(type_ids_symbol_id);
             }
             StructMemberFlag member_flags_symbol_id = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
-                    false, false, false, false);
+                    false, false, true, false);
             MemberId member_id_symbol_id = 0x00000001;
             bool common_symbol_id_ec {false};
             CommonStructMember common_symbol_id {TypeObjectUtils::build_common_struct_member(member_id_symbol_id, member_flags_symbol_id, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_symbol_id, common_symbol_id_ec))};
@@ -1066,6 +1118,19 @@ void register_OhlcvSeries_type_identifier(
             MemberName name_symbol_id = "symbol_id";
             eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_symbol_id;
             ann_custom_OhlcvSeries.reset();
+            AppliedAnnotationSeq tmp_ann_custom_symbol_id;
+            eprosima::fastcdr::optional<std::string> unit_symbol_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> min_symbol_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> max_symbol_id;
+            eprosima::fastcdr::optional<std::string> hash_id_symbol_id;
+            if (unit_symbol_id.has_value() || min_symbol_id.has_value() || max_symbol_id.has_value() || hash_id_symbol_id.has_value())
+            {
+                member_ann_builtin_symbol_id = TypeObjectUtils::build_applied_builtin_member_annotations(unit_symbol_id, min_symbol_id, max_symbol_id, hash_id_symbol_id);
+            }
+            if (!tmp_ann_custom_symbol_id.empty())
+            {
+                ann_custom_OhlcvSeries = tmp_ann_custom_symbol_id;
+            }
             CompleteMemberDetail detail_symbol_id = TypeObjectUtils::build_complete_member_detail(name_symbol_id, member_ann_builtin_symbol_id, ann_custom_OhlcvSeries);
             CompleteStructMember member_symbol_id = TypeObjectUtils::build_complete_struct_member(common_symbol_id, detail_symbol_id);
             TypeObjectUtils::add_complete_struct_member(member_seq_OhlcvSeries, member_symbol_id);
@@ -1082,7 +1147,7 @@ void register_OhlcvSeries_type_identifier(
                 ::inclination::idl_ex::register_key_t_type_identifier(type_ids_interval_id);
             }
             StructMemberFlag member_flags_interval_id = TypeObjectUtils::build_struct_member_flag(eprosima::fastdds::dds::xtypes::TryConstructFailAction::DISCARD,
-                    false, false, false, false);
+                    false, false, true, false);
             MemberId member_id_interval_id = 0x00000002;
             bool common_interval_id_ec {false};
             CommonStructMember common_interval_id {TypeObjectUtils::build_common_struct_member(member_id_interval_id, member_flags_interval_id, TypeObjectUtils::retrieve_complete_type_identifier(type_ids_interval_id, common_interval_id_ec))};
@@ -1094,6 +1159,19 @@ void register_OhlcvSeries_type_identifier(
             MemberName name_interval_id = "interval_id";
             eprosima::fastcdr::optional<AppliedBuiltinMemberAnnotations> member_ann_builtin_interval_id;
             ann_custom_OhlcvSeries.reset();
+            AppliedAnnotationSeq tmp_ann_custom_interval_id;
+            eprosima::fastcdr::optional<std::string> unit_interval_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> min_interval_id;
+            eprosima::fastcdr::optional<AnnotationParameterValue> max_interval_id;
+            eprosima::fastcdr::optional<std::string> hash_id_interval_id;
+            if (unit_interval_id.has_value() || min_interval_id.has_value() || max_interval_id.has_value() || hash_id_interval_id.has_value())
+            {
+                member_ann_builtin_interval_id = TypeObjectUtils::build_applied_builtin_member_annotations(unit_interval_id, min_interval_id, max_interval_id, hash_id_interval_id);
+            }
+            if (!tmp_ann_custom_interval_id.empty())
+            {
+                ann_custom_OhlcvSeries = tmp_ann_custom_interval_id;
+            }
             CompleteMemberDetail detail_interval_id = TypeObjectUtils::build_complete_member_detail(name_interval_id, member_ann_builtin_interval_id, ann_custom_OhlcvSeries);
             CompleteStructMember member_interval_id = TypeObjectUtils::build_complete_struct_member(common_interval_id, detail_interval_id);
             TypeObjectUtils::add_complete_struct_member(member_seq_OhlcvSeries, member_interval_id);

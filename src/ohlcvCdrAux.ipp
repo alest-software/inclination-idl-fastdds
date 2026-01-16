@@ -706,9 +706,7 @@ void serialize_key(
 
                         scdr << data.interval_id();
 
-                        scdr << data.etime();
 
-                        serialize_key(scdr, data.data());
 
 }
 
@@ -832,9 +830,7 @@ void serialize_key(
 
                         scdr << data.interval_id();
 
-                        scdr << data.etime();
 
-                        scdr << data.data();
 
 }
 
