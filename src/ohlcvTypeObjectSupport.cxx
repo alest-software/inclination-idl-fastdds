@@ -1010,7 +1010,7 @@ void register_OhlcvValue_type_identifier(
             ReturnCode_t return_code_sample_id {eprosima::fastdds::dds::RETCODE_OK};
             return_code_sample_id =
                 eprosima::fastdds::dds::DomainParticipantFactory::get_instance()->type_object_registry().get_type_identifiers(
-                "_int64_t", type_ids_sample_id);
+                "_uint64_t", type_ids_sample_id);
 
             if (eprosima::fastdds::dds::RETCODE_OK != return_code_sample_id)
             {

@@ -1124,7 +1124,7 @@ public:
      * @param _sample_id New value for member sample_id
      */
     eProsima_user_DllExport void sample_id(
-            int64_t _sample_id)
+            uint64_t _sample_id)
     {
         m_sample_id = _sample_id;
     }
@@ -1133,7 +1133,7 @@ public:
      * @brief This function returns the value of member sample_id
      * @return Value of member sample_id
      */
-    eProsima_user_DllExport int64_t sample_id() const
+    eProsima_user_DllExport uint64_t sample_id() const
     {
         return m_sample_id;
     }
@@ -1142,7 +1142,7 @@ public:
      * @brief This function returns a reference to member sample_id
      * @return Reference to member sample_id
      */
-    eProsima_user_DllExport int64_t& sample_id()
+    eProsima_user_DllExport uint64_t& sample_id()
     {
         return m_sample_id;
     }
@@ -1183,7 +1183,7 @@ private:
     exchange_id_t m_exchange_id;
     symbol_id_t m_symbol_id;
     interval_id_t m_interval_id;
-    int64_t m_sample_id{0};
+    uint64_t m_sample_id{0};
     double m_value{0.0};
 
 };

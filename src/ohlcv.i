@@ -324,7 +324,7 @@ namespace swig {
 
 
 
-%ignore inclination::idl_ex::OhlcvValue::sample_id(int64_t&&);
+%ignore inclination::idl_ex::OhlcvValue::sample_id(uint64_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python
