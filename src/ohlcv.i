@@ -81,7 +81,7 @@ namespace swig {
 
 // Overloaded getter methods shadow each other and are equivalent in python
 // Avoid a warning ignoring all but one
-%ignore inclination::idl_ex::exchange_t::id(inclination::idl_ex::key_t&&);
+%ignore inclination::idl_ex::exchange_t::id(inclination::idl_ex::exchange_id_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -128,7 +128,7 @@ namespace swig {
 
 // Overloaded getter methods shadow each other and are equivalent in python
 // Avoid a warning ignoring all but one
-%ignore inclination::idl_ex::asset_t::id(inclination::idl_ex::key_t&&);
+%ignore inclination::idl_ex::asset_t::id(inclination::idl_ex::asset_id_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -175,7 +175,7 @@ namespace swig {
 
 // Overloaded getter methods shadow each other and are equivalent in python
 // Avoid a warning ignoring all but one
-%ignore inclination::idl_ex::symbol_t::id(inclination::idl_ex::key_t&&);
+%ignore inclination::idl_ex::symbol_t::id(inclination::idl_ex::symbol_id_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -244,7 +244,7 @@ namespace swig {
 
 // Overloaded getter methods shadow each other and are equivalent in python
 // Avoid a warning ignoring all but one
-%ignore inclination::idl_ex::interval_t::id(inclination::idl_ex::key_t&&);
+%ignore inclination::idl_ex::interval_t::id(inclination::idl_ex::interval_id_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -276,6 +276,86 @@ namespace swig {
     }
 
     const inclination::idl_ex::interval_t& __getitem__(size_t i) const
+    {
+        return (*self)[i];
+    }
+}
+
+////////////////////////////////////////////////////////
+// Binding for class inclination::idl_ex::OhlcvValue
+////////////////////////////////////////////////////////
+
+// Ignore overloaded methods that have no application on Python
+// Otherwise they will issue a warning
+%ignore inclination::idl_ex::OhlcvValue::OhlcvValue(inclination::idl_ex::OhlcvValue&&);
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Avoid a warning ignoring all but one
+%ignore inclination::idl_ex::OhlcvValue::exchange_id(inclination::idl_ex::exchange_id_t&&);
+
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore inclination::idl_ex::OhlcvValue::exchange_id();
+%rename("%s") inclination::idl_ex::OhlcvValue::exchange_id() const;
+
+
+
+%ignore inclination::idl_ex::OhlcvValue::symbol_id(inclination::idl_ex::symbol_id_t&&);
+
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore inclination::idl_ex::OhlcvValue::symbol_id();
+%rename("%s") inclination::idl_ex::OhlcvValue::symbol_id() const;
+
+
+
+%ignore inclination::idl_ex::OhlcvValue::interval_id(inclination::idl_ex::interval_id_t&&);
+
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore inclination::idl_ex::OhlcvValue::interval_id();
+%rename("%s") inclination::idl_ex::OhlcvValue::interval_id() const;
+
+
+
+%ignore inclination::idl_ex::OhlcvValue::sample_id(int64_t&&);
+
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore inclination::idl_ex::OhlcvValue::sample_id();
+%rename("%s") inclination::idl_ex::OhlcvValue::sample_id() const;
+
+
+
+%ignore inclination::idl_ex::OhlcvValue::value(double&&);
+
+
+// Overloaded getter methods shadow each other and are equivalent in python
+// Const accesors produced constant enums instead of arrays/dictionaries when used
+// We ignore them to prevent this
+%ignore inclination::idl_ex::OhlcvValue::value();
+%rename("%s") inclination::idl_ex::OhlcvValue::value() const;
+
+
+
+%template(_OhlcvValueSeq) eprosima::fastdds::dds::LoanableTypedCollection<inclination::idl_ex::OhlcvValue, std::false_type>;
+%template(OhlcvValueSeq) eprosima::fastdds::dds::LoanableSequence<inclination::idl_ex::OhlcvValue, std::false_type>;
+%extend eprosima::fastdds::dds::LoanableSequence<inclination::idl_ex::OhlcvValue, std::false_type>
+{
+    size_t __len__() const
+    {
+        return self->length();
+    }
+
+    const inclination::idl_ex::OhlcvValue& __getitem__(size_t i) const
     {
         return (*self)[i];
     }
@@ -382,7 +462,7 @@ namespace swig {
 
 // Overloaded getter methods shadow each other and are equivalent in python
 // Avoid a warning ignoring all but one
-%ignore inclination::idl_ex::Ohlcv::exchange_id(inclination::idl_ex::key_t&&);
+%ignore inclination::idl_ex::Ohlcv::exchange_id(inclination::idl_ex::exchange_id_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -393,7 +473,7 @@ namespace swig {
 
 
 
-%ignore inclination::idl_ex::Ohlcv::symbol_id(inclination::idl_ex::key_t&&);
+%ignore inclination::idl_ex::Ohlcv::symbol_id(inclination::idl_ex::symbol_id_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -404,7 +484,7 @@ namespace swig {
 
 
 
-%ignore inclination::idl_ex::Ohlcv::interval_id(inclination::idl_ex::key_t&&);
+%ignore inclination::idl_ex::Ohlcv::interval_id(inclination::idl_ex::interval_id_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -462,7 +542,7 @@ namespace swig {
 
 // Overloaded getter methods shadow each other and are equivalent in python
 // Avoid a warning ignoring all but one
-%ignore inclination::idl_ex::OhlcvSeries::exchange_id(inclination::idl_ex::key_t&&);
+%ignore inclination::idl_ex::OhlcvSeries::exchange_id(inclination::idl_ex::exchange_id_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -473,7 +553,7 @@ namespace swig {
 
 
 
-%ignore inclination::idl_ex::OhlcvSeries::symbol_id(inclination::idl_ex::key_t&&);
+%ignore inclination::idl_ex::OhlcvSeries::symbol_id(inclination::idl_ex::symbol_id_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python
@@ -484,7 +564,7 @@ namespace swig {
 
 
 
-%ignore inclination::idl_ex::OhlcvSeries::interval_id(inclination::idl_ex::key_t&&);
+%ignore inclination::idl_ex::OhlcvSeries::interval_id(inclination::idl_ex::interval_id_t&&);
 
 
 // Overloaded getter methods shadow each other and are equivalent in python

@@ -60,6 +60,14 @@ namespace idl_ex {
 
 typedef std::string key_t;
 
+typedef std::string exchange_id_t;
+
+typedef std::string asset_id_t;
+
+typedef std::string symbol_id_t;
+
+typedef std::string interval_id_t;
+
 typedef double price_t;
 
 typedef double volume_t;
@@ -164,7 +172,7 @@ public:
      * @param _id New value to be copied in member id
      */
     eProsima_user_DllExport void id(
-            const key_t& _id)
+            const exchange_id_t& _id)
     {
         m_id = _id;
     }
@@ -174,7 +182,7 @@ public:
      * @param _id New value to be moved in member id
      */
     eProsima_user_DllExport void id(
-            key_t&& _id)
+            exchange_id_t&& _id)
     {
         m_id = std::move(_id);
     }
@@ -183,7 +191,7 @@ public:
      * @brief This function returns a constant reference to member id
      * @return Constant reference to member id
      */
-    eProsima_user_DllExport const key_t& id() const
+    eProsima_user_DllExport const exchange_id_t& id() const
     {
         return m_id;
     }
@@ -192,7 +200,7 @@ public:
      * @brief This function returns a reference to member id
      * @return Reference to member id
      */
-    eProsima_user_DllExport key_t& id()
+    eProsima_user_DllExport exchange_id_t& id()
     {
         return m_id;
     }
@@ -240,7 +248,7 @@ public:
 
 private:
 
-    key_t m_id;
+    exchange_id_t m_id;
     std::string m_name;
 
 };
@@ -344,7 +352,7 @@ public:
      * @param _id New value to be copied in member id
      */
     eProsima_user_DllExport void id(
-            const key_t& _id)
+            const asset_id_t& _id)
     {
         m_id = _id;
     }
@@ -354,7 +362,7 @@ public:
      * @param _id New value to be moved in member id
      */
     eProsima_user_DllExport void id(
-            key_t&& _id)
+            asset_id_t&& _id)
     {
         m_id = std::move(_id);
     }
@@ -363,7 +371,7 @@ public:
      * @brief This function returns a constant reference to member id
      * @return Constant reference to member id
      */
-    eProsima_user_DllExport const key_t& id() const
+    eProsima_user_DllExport const asset_id_t& id() const
     {
         return m_id;
     }
@@ -372,7 +380,7 @@ public:
      * @brief This function returns a reference to member id
      * @return Reference to member id
      */
-    eProsima_user_DllExport key_t& id()
+    eProsima_user_DllExport asset_id_t& id()
     {
         return m_id;
     }
@@ -420,7 +428,7 @@ public:
 
 private:
 
-    key_t m_id;
+    asset_id_t m_id;
     std::string m_name;
 
 };
@@ -538,7 +546,7 @@ public:
      * @param _id New value to be copied in member id
      */
     eProsima_user_DllExport void id(
-            const key_t& _id)
+            const symbol_id_t& _id)
     {
         m_id = _id;
     }
@@ -548,7 +556,7 @@ public:
      * @param _id New value to be moved in member id
      */
     eProsima_user_DllExport void id(
-            key_t&& _id)
+            symbol_id_t&& _id)
     {
         m_id = std::move(_id);
     }
@@ -557,7 +565,7 @@ public:
      * @brief This function returns a constant reference to member id
      * @return Constant reference to member id
      */
-    eProsima_user_DllExport const key_t& id() const
+    eProsima_user_DllExport const symbol_id_t& id() const
     {
         return m_id;
     }
@@ -566,7 +574,7 @@ public:
      * @brief This function returns a reference to member id
      * @return Reference to member id
      */
-    eProsima_user_DllExport key_t& id()
+    eProsima_user_DllExport symbol_id_t& id()
     {
         return m_id;
     }
@@ -692,7 +700,7 @@ public:
 
 private:
 
-    key_t m_id;
+    symbol_id_t m_id;
     asset_t m_base;
     asset_t m_quote;
     std::string m_name;
@@ -798,7 +806,7 @@ public:
      * @param _id New value to be copied in member id
      */
     eProsima_user_DllExport void id(
-            const key_t& _id)
+            const interval_id_t& _id)
     {
         m_id = _id;
     }
@@ -808,7 +816,7 @@ public:
      * @param _id New value to be moved in member id
      */
     eProsima_user_DllExport void id(
-            key_t&& _id)
+            interval_id_t&& _id)
     {
         m_id = std::move(_id);
     }
@@ -817,7 +825,7 @@ public:
      * @brief This function returns a constant reference to member id
      * @return Constant reference to member id
      */
-    eProsima_user_DllExport const key_t& id() const
+    eProsima_user_DllExport const interval_id_t& id() const
     {
         return m_id;
     }
@@ -826,7 +834,7 @@ public:
      * @brief This function returns a reference to member id
      * @return Reference to member id
      */
-    eProsima_user_DllExport key_t& id()
+    eProsima_user_DllExport interval_id_t& id()
     {
         return m_id;
     }
@@ -874,8 +882,309 @@ public:
 
 private:
 
-    key_t m_id;
+    interval_id_t m_id;
     std::string m_name;
+
+};
+/*!
+ * @brief This class represents the structure OhlcvValue defined by the user in the IDL file.
+ * @ingroup ohlcv
+ */
+class OhlcvValue
+{
+public:
+
+    /*!
+     * @brief Default constructor.
+     */
+    eProsima_user_DllExport OhlcvValue()
+    {
+    }
+
+    /*!
+     * @brief Default destructor.
+     */
+    eProsima_user_DllExport ~OhlcvValue()
+    {
+    }
+
+    /*!
+     * @brief Copy constructor.
+     * @param x Reference to the object OhlcvValue that will be copied.
+     */
+    eProsima_user_DllExport OhlcvValue(
+            const OhlcvValue& x)
+    {
+                    m_exchange_id = x.m_exchange_id;
+
+                    m_symbol_id = x.m_symbol_id;
+
+                    m_interval_id = x.m_interval_id;
+
+                    m_sample_id = x.m_sample_id;
+
+                    m_value = x.m_value;
+
+    }
+
+    /*!
+     * @brief Move constructor.
+     * @param x Reference to the object OhlcvValue that will be copied.
+     */
+    eProsima_user_DllExport OhlcvValue(
+            OhlcvValue&& x) noexcept
+    {
+        m_exchange_id = std::move(x.m_exchange_id);
+        m_symbol_id = std::move(x.m_symbol_id);
+        m_interval_id = std::move(x.m_interval_id);
+        m_sample_id = x.m_sample_id;
+        m_value = x.m_value;
+    }
+
+    /*!
+     * @brief Copy assignment.
+     * @param x Reference to the object OhlcvValue that will be copied.
+     */
+    eProsima_user_DllExport OhlcvValue& operator =(
+            const OhlcvValue& x)
+    {
+
+                    m_exchange_id = x.m_exchange_id;
+
+                    m_symbol_id = x.m_symbol_id;
+
+                    m_interval_id = x.m_interval_id;
+
+                    m_sample_id = x.m_sample_id;
+
+                    m_value = x.m_value;
+
+        return *this;
+    }
+
+    /*!
+     * @brief Move assignment.
+     * @param x Reference to the object OhlcvValue that will be copied.
+     */
+    eProsima_user_DllExport OhlcvValue& operator =(
+            OhlcvValue&& x) noexcept
+    {
+
+        m_exchange_id = std::move(x.m_exchange_id);
+        m_symbol_id = std::move(x.m_symbol_id);
+        m_interval_id = std::move(x.m_interval_id);
+        m_sample_id = x.m_sample_id;
+        m_value = x.m_value;
+        return *this;
+    }
+
+    /*!
+     * @brief Comparison operator.
+     * @param x OhlcvValue object to compare.
+     */
+    eProsima_user_DllExport bool operator ==(
+            const OhlcvValue& x) const
+    {
+        return (m_exchange_id == x.m_exchange_id &&
+           m_symbol_id == x.m_symbol_id &&
+           m_interval_id == x.m_interval_id &&
+           m_sample_id == x.m_sample_id &&
+           m_value == x.m_value);
+    }
+
+    /*!
+     * @brief Comparison operator.
+     * @param x OhlcvValue object to compare.
+     */
+    eProsima_user_DllExport bool operator !=(
+            const OhlcvValue& x) const
+    {
+        return !(*this == x);
+    }
+
+    /*!
+     * @brief This function copies the value in member exchange_id
+     * @param _exchange_id New value to be copied in member exchange_id
+     */
+    eProsima_user_DllExport void exchange_id(
+            const exchange_id_t& _exchange_id)
+    {
+        m_exchange_id = _exchange_id;
+    }
+
+    /*!
+     * @brief This function moves the value in member exchange_id
+     * @param _exchange_id New value to be moved in member exchange_id
+     */
+    eProsima_user_DllExport void exchange_id(
+            exchange_id_t&& _exchange_id)
+    {
+        m_exchange_id = std::move(_exchange_id);
+    }
+
+    /*!
+     * @brief This function returns a constant reference to member exchange_id
+     * @return Constant reference to member exchange_id
+     */
+    eProsima_user_DllExport const exchange_id_t& exchange_id() const
+    {
+        return m_exchange_id;
+    }
+
+    /*!
+     * @brief This function returns a reference to member exchange_id
+     * @return Reference to member exchange_id
+     */
+    eProsima_user_DllExport exchange_id_t& exchange_id()
+    {
+        return m_exchange_id;
+    }
+
+
+    /*!
+     * @brief This function copies the value in member symbol_id
+     * @param _symbol_id New value to be copied in member symbol_id
+     */
+    eProsima_user_DllExport void symbol_id(
+            const symbol_id_t& _symbol_id)
+    {
+        m_symbol_id = _symbol_id;
+    }
+
+    /*!
+     * @brief This function moves the value in member symbol_id
+     * @param _symbol_id New value to be moved in member symbol_id
+     */
+    eProsima_user_DllExport void symbol_id(
+            symbol_id_t&& _symbol_id)
+    {
+        m_symbol_id = std::move(_symbol_id);
+    }
+
+    /*!
+     * @brief This function returns a constant reference to member symbol_id
+     * @return Constant reference to member symbol_id
+     */
+    eProsima_user_DllExport const symbol_id_t& symbol_id() const
+    {
+        return m_symbol_id;
+    }
+
+    /*!
+     * @brief This function returns a reference to member symbol_id
+     * @return Reference to member symbol_id
+     */
+    eProsima_user_DllExport symbol_id_t& symbol_id()
+    {
+        return m_symbol_id;
+    }
+
+
+    /*!
+     * @brief This function copies the value in member interval_id
+     * @param _interval_id New value to be copied in member interval_id
+     */
+    eProsima_user_DllExport void interval_id(
+            const interval_id_t& _interval_id)
+    {
+        m_interval_id = _interval_id;
+    }
+
+    /*!
+     * @brief This function moves the value in member interval_id
+     * @param _interval_id New value to be moved in member interval_id
+     */
+    eProsima_user_DllExport void interval_id(
+            interval_id_t&& _interval_id)
+    {
+        m_interval_id = std::move(_interval_id);
+    }
+
+    /*!
+     * @brief This function returns a constant reference to member interval_id
+     * @return Constant reference to member interval_id
+     */
+    eProsima_user_DllExport const interval_id_t& interval_id() const
+    {
+        return m_interval_id;
+    }
+
+    /*!
+     * @brief This function returns a reference to member interval_id
+     * @return Reference to member interval_id
+     */
+    eProsima_user_DllExport interval_id_t& interval_id()
+    {
+        return m_interval_id;
+    }
+
+
+    /*!
+     * @brief This function sets a value in member sample_id
+     * @param _sample_id New value for member sample_id
+     */
+    eProsima_user_DllExport void sample_id(
+            int64_t _sample_id)
+    {
+        m_sample_id = _sample_id;
+    }
+
+    /*!
+     * @brief This function returns the value of member sample_id
+     * @return Value of member sample_id
+     */
+    eProsima_user_DllExport int64_t sample_id() const
+    {
+        return m_sample_id;
+    }
+
+    /*!
+     * @brief This function returns a reference to member sample_id
+     * @return Reference to member sample_id
+     */
+    eProsima_user_DllExport int64_t& sample_id()
+    {
+        return m_sample_id;
+    }
+
+
+    /*!
+     * @brief This function sets a value in member value
+     * @param _value New value for member value
+     */
+    eProsima_user_DllExport void value(
+            double _value)
+    {
+        m_value = _value;
+    }
+
+    /*!
+     * @brief This function returns the value of member value
+     * @return Value of member value
+     */
+    eProsima_user_DllExport double value() const
+    {
+        return m_value;
+    }
+
+    /*!
+     * @brief This function returns a reference to member value
+     * @return Reference to member value
+     */
+    eProsima_user_DllExport double& value()
+    {
+        return m_value;
+    }
+
+
+
+private:
+
+    exchange_id_t m_exchange_id;
+    symbol_id_t m_symbol_id;
+    interval_id_t m_interval_id;
+    int64_t m_sample_id{0};
+    double m_value{0.0};
 
 };
 /*!
@@ -1307,7 +1616,7 @@ public:
      * @param _exchange_id New value to be copied in member exchange_id
      */
     eProsima_user_DllExport void exchange_id(
-            const key_t& _exchange_id)
+            const exchange_id_t& _exchange_id)
     {
         m_exchange_id = _exchange_id;
     }
@@ -1317,7 +1626,7 @@ public:
      * @param _exchange_id New value to be moved in member exchange_id
      */
     eProsima_user_DllExport void exchange_id(
-            key_t&& _exchange_id)
+            exchange_id_t&& _exchange_id)
     {
         m_exchange_id = std::move(_exchange_id);
     }
@@ -1326,7 +1635,7 @@ public:
      * @brief This function returns a constant reference to member exchange_id
      * @return Constant reference to member exchange_id
      */
-    eProsima_user_DllExport const key_t& exchange_id() const
+    eProsima_user_DllExport const exchange_id_t& exchange_id() const
     {
         return m_exchange_id;
     }
@@ -1335,7 +1644,7 @@ public:
      * @brief This function returns a reference to member exchange_id
      * @return Reference to member exchange_id
      */
-    eProsima_user_DllExport key_t& exchange_id()
+    eProsima_user_DllExport exchange_id_t& exchange_id()
     {
         return m_exchange_id;
     }
@@ -1346,7 +1655,7 @@ public:
      * @param _symbol_id New value to be copied in member symbol_id
      */
     eProsima_user_DllExport void symbol_id(
-            const key_t& _symbol_id)
+            const symbol_id_t& _symbol_id)
     {
         m_symbol_id = _symbol_id;
     }
@@ -1356,7 +1665,7 @@ public:
      * @param _symbol_id New value to be moved in member symbol_id
      */
     eProsima_user_DllExport void symbol_id(
-            key_t&& _symbol_id)
+            symbol_id_t&& _symbol_id)
     {
         m_symbol_id = std::move(_symbol_id);
     }
@@ -1365,7 +1674,7 @@ public:
      * @brief This function returns a constant reference to member symbol_id
      * @return Constant reference to member symbol_id
      */
-    eProsima_user_DllExport const key_t& symbol_id() const
+    eProsima_user_DllExport const symbol_id_t& symbol_id() const
     {
         return m_symbol_id;
     }
@@ -1374,7 +1683,7 @@ public:
      * @brief This function returns a reference to member symbol_id
      * @return Reference to member symbol_id
      */
-    eProsima_user_DllExport key_t& symbol_id()
+    eProsima_user_DllExport symbol_id_t& symbol_id()
     {
         return m_symbol_id;
     }
@@ -1385,7 +1694,7 @@ public:
      * @param _interval_id New value to be copied in member interval_id
      */
     eProsima_user_DllExport void interval_id(
-            const key_t& _interval_id)
+            const interval_id_t& _interval_id)
     {
         m_interval_id = _interval_id;
     }
@@ -1395,7 +1704,7 @@ public:
      * @param _interval_id New value to be moved in member interval_id
      */
     eProsima_user_DllExport void interval_id(
-            key_t&& _interval_id)
+            interval_id_t&& _interval_id)
     {
         m_interval_id = std::move(_interval_id);
     }
@@ -1404,7 +1713,7 @@ public:
      * @brief This function returns a constant reference to member interval_id
      * @return Constant reference to member interval_id
      */
-    eProsima_user_DllExport const key_t& interval_id() const
+    eProsima_user_DllExport const interval_id_t& interval_id() const
     {
         return m_interval_id;
     }
@@ -1413,7 +1722,7 @@ public:
      * @brief This function returns a reference to member interval_id
      * @return Reference to member interval_id
      */
-    eProsima_user_DllExport key_t& interval_id()
+    eProsima_user_DllExport interval_id_t& interval_id()
     {
         return m_interval_id;
     }
@@ -1490,9 +1799,9 @@ public:
 
 private:
 
-    key_t m_exchange_id;
-    key_t m_symbol_id;
-    key_t m_interval_id;
+    exchange_id_t m_exchange_id;
+    symbol_id_t m_symbol_id;
+    interval_id_t m_interval_id;
     timestamp_t m_etime{0.0};
     OhlcvData m_data;
 
@@ -1618,7 +1927,7 @@ public:
      * @param _exchange_id New value to be copied in member exchange_id
      */
     eProsima_user_DllExport void exchange_id(
-            const key_t& _exchange_id)
+            const exchange_id_t& _exchange_id)
     {
         m_exchange_id = _exchange_id;
     }
@@ -1628,7 +1937,7 @@ public:
      * @param _exchange_id New value to be moved in member exchange_id
      */
     eProsima_user_DllExport void exchange_id(
-            key_t&& _exchange_id)
+            exchange_id_t&& _exchange_id)
     {
         m_exchange_id = std::move(_exchange_id);
     }
@@ -1637,7 +1946,7 @@ public:
      * @brief This function returns a constant reference to member exchange_id
      * @return Constant reference to member exchange_id
      */
-    eProsima_user_DllExport const key_t& exchange_id() const
+    eProsima_user_DllExport const exchange_id_t& exchange_id() const
     {
         return m_exchange_id;
     }
@@ -1646,7 +1955,7 @@ public:
      * @brief This function returns a reference to member exchange_id
      * @return Reference to member exchange_id
      */
-    eProsima_user_DllExport key_t& exchange_id()
+    eProsima_user_DllExport exchange_id_t& exchange_id()
     {
         return m_exchange_id;
     }
@@ -1657,7 +1966,7 @@ public:
      * @param _symbol_id New value to be copied in member symbol_id
      */
     eProsima_user_DllExport void symbol_id(
-            const key_t& _symbol_id)
+            const symbol_id_t& _symbol_id)
     {
         m_symbol_id = _symbol_id;
     }
@@ -1667,7 +1976,7 @@ public:
      * @param _symbol_id New value to be moved in member symbol_id
      */
     eProsima_user_DllExport void symbol_id(
-            key_t&& _symbol_id)
+            symbol_id_t&& _symbol_id)
     {
         m_symbol_id = std::move(_symbol_id);
     }
@@ -1676,7 +1985,7 @@ public:
      * @brief This function returns a constant reference to member symbol_id
      * @return Constant reference to member symbol_id
      */
-    eProsima_user_DllExport const key_t& symbol_id() const
+    eProsima_user_DllExport const symbol_id_t& symbol_id() const
     {
         return m_symbol_id;
     }
@@ -1685,7 +1994,7 @@ public:
      * @brief This function returns a reference to member symbol_id
      * @return Reference to member symbol_id
      */
-    eProsima_user_DllExport key_t& symbol_id()
+    eProsima_user_DllExport symbol_id_t& symbol_id()
     {
         return m_symbol_id;
     }
@@ -1696,7 +2005,7 @@ public:
      * @param _interval_id New value to be copied in member interval_id
      */
     eProsima_user_DllExport void interval_id(
-            const key_t& _interval_id)
+            const interval_id_t& _interval_id)
     {
         m_interval_id = _interval_id;
     }
@@ -1706,7 +2015,7 @@ public:
      * @param _interval_id New value to be moved in member interval_id
      */
     eProsima_user_DllExport void interval_id(
-            key_t&& _interval_id)
+            interval_id_t&& _interval_id)
     {
         m_interval_id = std::move(_interval_id);
     }
@@ -1715,7 +2024,7 @@ public:
      * @brief This function returns a constant reference to member interval_id
      * @return Constant reference to member interval_id
      */
-    eProsima_user_DllExport const key_t& interval_id() const
+    eProsima_user_DllExport const interval_id_t& interval_id() const
     {
         return m_interval_id;
     }
@@ -1724,7 +2033,7 @@ public:
      * @brief This function returns a reference to member interval_id
      * @return Reference to member interval_id
      */
-    eProsima_user_DllExport key_t& interval_id()
+    eProsima_user_DllExport interval_id_t& interval_id()
     {
         return m_interval_id;
     }
@@ -1801,9 +2110,9 @@ public:
 
 private:
 
-    key_t m_exchange_id;
-    key_t m_symbol_id;
-    key_t m_interval_id;
+    exchange_id_t m_exchange_id;
+    symbol_id_t m_symbol_id;
+    interval_id_t m_interval_id;
     timestamp_t m_etime{0.0};
     std::vector<OhlcvData> m_data;
 
